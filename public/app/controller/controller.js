@@ -3,6 +3,9 @@ angular.module("Controller", [])
 .controller("IndexController", ['$rootScope', '$scope', '$timeout', '$filter', '$state', 'moment', function($rootScope, $scope, $timeout, $filter, $state, $moment){
     // Declare a new Date Object
     $scope.current_date = new Date()
+    $scope.current_month = ($scope.current_date.getMonth() === $rootScope.birth_date.getMonth())
+    
+    $scope.start_time = new Date(`${$rootScope.birth_date.getMonth() + 1}/01/${$rootScope.birth_date.getFullYear()} 00:00:00`).getTime()
 
     $rootScope.title = `Birthday Wishes - ${$state.current.title}`
 
@@ -19,8 +22,12 @@ angular.module("Controller", [])
         let duration = 0
         let tick = () => {
             $scope.current_date = new Date()
-            $scope.percentage = $filter('number')(($scope.current_date.getTime() / $rootScope.birth_date.getTime()) * 100, 2)
+            
+            let percent = (($scope.current_date.getTime() - $scope.start_time) / ($rootScope.birth_date.getTime() - $scope.start_time)) * 100
+            $scope.percentage = $filter('number')(percent, 0)
+            
             duration = ($rootScope.birth_date.getTime() - $scope.current_date.getTime())
+            
             $scope.duration = {
                 M: moment.duration(duration).get("M") > 9 ? moment.duration(duration).get("M") : `0${moment.duration(duration).get("M")}`,
                 w: moment.duration(duration).get("w") > 9 ? moment.duration(duration).get("w") : `0${moment.duration(duration).get("w")}`,

@@ -1,6 +1,6 @@
-angular.module("BirthdayWishes", ["App-Routes", "Controller", "angularMoment", "angular-loading-bar"])
+angular.module("BirthdayWishes", ["App-Routes", "Controller", "angularMoment", "angular-loading-bar", "countTo"])
 
 .run(['$rootScope', '$state', function($rootScope, $state){
-    $rootScope.birth_date = new Date("02/31/2017 00:00:00")
+    $rootScope.birth_date = new Date("01/31/2017 00:00:00")
     $rootScope.tickInterval = 1000
 }])

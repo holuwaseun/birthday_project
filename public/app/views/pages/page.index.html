@@ -26,10 +26,10 @@
                 <h1>{{ duration.s }}</h1>
                 <small>Second(s)</small>
             </div>
-            <div class="col-md-12">
+            <div ng-if="current_month" class="col-md-12">
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ current_date.getTime() }}" aria-valuemin="0" aria-valuemax="{{ $root.birth_date.getTime() }}" style="width: {{ percentage }}%;">
-                        {{ percentage }}%
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ current_date.getTime() }}" aria-valuemin="{{ start_time }}" aria-valuemax="{{ $root.birth_date.getTime() }}" style="width: {{ percentage }}%;">
+                        <span count-to="{{ percentage }}" duration="2" count-from="0"></span>% Loading...
                     </div>
                 </div>
             </div>
