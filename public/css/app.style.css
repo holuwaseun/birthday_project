@@ -1,0 +1,25 @@
+#timer_object, #greeting_object
+{
+    margin-top: 20%;
+}
+
+#timer_object small
+{
+    font-weight: bold;
+    color: #bcb;
+}
+
+#timer_object div.thumbnail
+{
+    border-radius: 0 !important;
+    margin: 0px;
+    border: none !important;
+}
+
+#timer_object div.thumbnail h1
+{
+    font-weight: bold;
+    font-size: 70px;
+    margin: 5px 0px;
+    color: #555;
+}

@@ -1,6 +1,6 @@
 angular.module("App-Routes", ["ui.router"])
 
-.config(function($stateProvider, $urlRouterProvider, $locationProvider){
+.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
     $stateProvider
         .state("index", {
@@ -37,4 +37,4 @@ angular.module("App-Routes", ["ui.router"])
         })
 
     $urlRouterProvider.otherwise('/index')
-})
+}])

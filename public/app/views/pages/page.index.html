@@ -1,4 +1,38 @@
-<div>
-    <h1>{{ index.months }} month(s)</h1>
-    <h1>{{ index.days }} day(s)</h1>
+<div class="container">
+    <div class="col-md-12">
+        <div id="timer_object" class="col-md-8 col-md-offset-2">
+            <h1 class="text-center">We can&apos;t wait to wish You a happy birthday</h1>
+            <div class="thumbnail col-md-2 text-center">
+               <h1>{{ duration.M }}</h1>
+               <small>Month(s)</small>
+            </div>
+            <div class="thumbnail col-md-2 text-center">
+                <h1>{{ duration.w }}</h1>
+                <small>Week(s)</small>
+            </div>
+            <div class="thumbnail col-md-2 text-center">
+                <h1>{{ duration.d }}</h1>
+                <small>Day(s)</small>
+            </div>
+            <div class="thumbnail col-md-2 text-center">
+                <h1>{{ duration.h }}</h1>
+                <small>Hour(s)</small>
+            </div>
+            <div class="thumbnail col-md-2 text-center">
+                <h1>{{ duration.m }}</h1>
+                <small>Minute(s)</small>
+            </div>
+            <div class="thumbnail col-md-2 text-center">
+                <h1>{{ duration.s }}</h1>
+                <small>Second(s)</small>
+            </div>
+            <div class="col-md-12">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ current_date.getTime() }}" aria-valuemin="0" aria-valuemax="{{ $root.birth_date.getTime() }}" style="width: {{ percentage }}%;">
+                        {{ percentage }}%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
