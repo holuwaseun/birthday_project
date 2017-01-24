@@ -12,7 +12,7 @@ app.get("*", function(request, response){
     response.sendFile(`${__dirname}/public/app/views/index.html`)
 })
 
-http.listen(2284, function(err){
+http.listen(2286, function(err){
     if(err)
     {
         console.log(err)
