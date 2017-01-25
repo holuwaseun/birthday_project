@@ -1,32 +1,12 @@
 <div class="container">
     <div class="col-md-12">
         <div id="greeting_object" class="col-md-8 col-md-offset-2">
-            <h1 class="text-left">
-                Smiley here
-            </h1>
-            <div class="thumbnail col-md-2 text-center">
-               <h1>{{ duration.M }}</h1>
-               <small>Month(s)</small>
-            </div>
-            <div class="thumbnail col-md-2 text-center">
-                <h1>{{ duration.w }}</h1>
-                <small>Week(s)</small>
-            </div>
-            <div class="thumbnail col-md-2 text-center">
-                <h1>{{ duration.d }}</h1>
-                <small>Day(s)</small>
-            </div>
-            <div class="thumbnail col-md-2 text-center">
-                <h1>{{ duration.h }}</h1>
-                <small>Hour(s)</small>
-            </div>
-            <div class="thumbnail col-md-2 text-center">
-                <h1>{{ duration.m }}</h1>
-                <small>Minute(s)</small>
-            </div>
-            <div class="thumbnail col-md-2 text-center">
-                <h1>{{ duration.s }}</h1>
-                <small>Second(s)</small>
+            <div class="thumbnail col-md-12 text-center">
+                <img id="smiley_object" src="img/smiley.jpg" style="width: 100px; height: 100px;" />
+                <h1>Hi, Happy Birthday {{ $root.fullname }}</h1>
+                <p>
+                    <a class="btn btn-success btn-md">Click Here For A Surprise!!!</a>
+                </p>
             </div>
         </div>
     </div>

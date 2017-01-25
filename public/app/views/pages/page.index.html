@@ -1,37 +1,63 @@
-<div class="container">
+<div ng-if="!is_birthday" class="container-fluid">
+    <img src="img/bg_two.jpg" class="full_background" />
     <div class="col-md-12">
         <div id="timer_object" class="col-md-8 col-md-offset-2">
-            <h1 class="text-center">We can&apos;t wait to wish You a happy birthday</h1>
-            <div class="thumbnail col-md-2 text-center">
-               <h1>{{ duration.M }}</h1>
-               <small>Month(s)</small>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center" style="color: #FFF;">We can&apos;t wait to wish You a happy birthday!!!</h1>
+                </div>
             </div>
-            <div class="thumbnail col-md-2 text-center">
-                <h1>{{ duration.w }}</h1>
-                <small>Week(s)</small>
-            </div>
-            <div class="thumbnail col-md-2 text-center">
-                <h1>{{ duration.d }}</h1>
-                <small>Day(s)</small>
-            </div>
-            <div class="thumbnail col-md-2 text-center">
-                <h1>{{ duration.h }}</h1>
-                <small>Hour(s)</small>
-            </div>
-            <div class="thumbnail col-md-2 text-center">
-                <h1>{{ duration.m }}</h1>
-                <small>Minute(s)</small>
-            </div>
-            <div class="thumbnail col-md-2 text-center">
-                <h1>{{ duration.s }}</h1>
-                <small>Second(s)</small>
-            </div>
-            <div ng-if="current_month" class="col-md-12">
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ current_date.getTime() }}" aria-valuemin="{{ start_time }}" aria-valuemax="{{ $root.birth_date.getTime() }}" style="width: {{ percentage }}%;">
-                        <span count-to="{{ percentage }}" duration="2" count-from="0"></span>% Loading...
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="thumbnail col-md-2 text-center">
+                        <h1>{{ duration.M }}</h1>
+                        <small>Month(s)</small>
+                    </div>
+                    <div class="thumbnail col-md-2 text-center">
+                        <h1>{{ duration.w }}</h1>
+                        <small>Week(s)</small>
+                    </div>
+                    <div class="thumbnail col-md-2 text-center">
+                        <h1>{{ duration.d }}</h1>
+                        <small>Day(s)</small>
+                    </div>
+                    <div class="thumbnail col-md-2 text-center">
+                        <h1>{{ duration.h }}</h1>
+                        <small>Hour(s)</small>
+                    </div>
+                    <div class="thumbnail col-md-2 text-center">
+                        <h1>{{ duration.m }}</h1>
+                        <small>Minute(s)</small>
+                    </div>
+                    <div class="thumbnail col-md-2 text-center">
+                        <h1>{{ duration.s }}</h1>
+                        <small>Second(s)</small>
                     </div>
                 </div>
+            </div>
+            <div ng-if="current_month" style="margin-top: 10px;" class="row">
+                <div class="col-md-12">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{ current_date.getTime() }}" aria-valuemin="{{ start_time }}" aria-valuemax="{{ $root.birth_date.getTime() }}" style="width: {{ percentage }}%;">
+                            {{ percentage }}% Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-if="is_birthday" class="container_fluid">
+    <img src="img/balloon.png" class="full_background" />
+    <div class="col-md-12">
+        <div id="greeting_object" class="col-md-8 col-md-offset-2">
+            <div class="thumbnail col-md-12 text-center">
+                <img id="smiley_object" src="img/smiley.png" style="width: 100px; height: 100px;" />
+                <h1>Hi, Happy Birthday {{ $root.fullname }}</h1>
+                <p>
+                    <a class="btn btn-success btn-md">Click Here For A Surprise!!!</a>
+                </p>
             </div>
         </div>
     </div>
