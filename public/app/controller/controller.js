@@ -30,12 +30,19 @@ angular.module("Controller", [])
         {
             if(parseInt($rootScope.current_date.getHours()) === parseInt($rootScope.birth_date.getHours()) && parseInt($rootScope.current_date.getMinutes()) === parseInt($rootScope.birth_date.getMinutes()))
             {
+                $timeout.cancel()
                 // Redirect to the greetings page
                 $state.go('greeting', null, {reload: true})
             }
+            else
+            {
+                $timeout(tick, $rootScope.tickInterval)
+            }
         }
-
-        $timeout(tick, $rootScope.tickInterval)
+        else
+        {
+            $timeout(tick, $rootScope.tickInterval)
+        }
     }
 
     $timeout(tick, $rootScope.tickInterval)
@@ -44,9 +51,34 @@ angular.module("Controller", [])
 
 .controller("GreetingController", ['$rootScope', '$scope', '$filter', '$state', function($rootScope, $scope, $filter, $state){
     
-    let happy_birthday = [
-        'H_orange.png', 'A_blue.png', 'P_red.png', 'P_green.png', 'Y_pink.png',
-        'B_green.png', 'I_blue.png', 'R_brown.png', 'T_pink.png', 'H_blue.png', 'D_red.png', 'A_broew.png', 'Y_blue.png'
-    ]
+    let vm = this
+
+    vm.showShouts = () => {
+        $state.go('message', null, {reload: true})
+    }
+
+}])
+
+.controller("MessageController", ['$rootScope', '$scope', '$filter', '$timeout', '$state', function($rootScope, $scope, $filter, $timeout, $state){
+    
+    let vm = this
+
+    $rootScope.show_msg_one = false
+    $rootScope.show_msg_two = false
+    $rootScope.show_msg_three = false
+
+    $timeout(() => {
+        $rootScope.show_msg_one = true
+
+        $timeout(() => {
+            $rootScope.show_msg_two = true
+
+            $timeout(() => {
+                $rootScope.show_msg_three = true
+            }, 4000)
+
+        }, 4000)
+
+    }, 2000)
 
 }])

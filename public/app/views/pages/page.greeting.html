@@ -1,13 +1,17 @@
-<div class="container_fluid">
+<div class="container-fluid">
     <img src="img/balloon.png" class="full_background" />
     <div class="col-md-12">
         <div id="greeting_object" class="col-md-8 col-md-offset-2">
-            <div class="thumbnail col-md-12 text-center">
-                <img id="smiley_object" src="img/smiley.png" style="width: 100px; height: 100px;" />
-                <h1>Hi, Happy Birthday {{ $root.fullname }}</h1>
-                <p>
-                    <a class="btn btn-success btn-md">Click Here For A Surprise!!!</a>
-                </p>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="thumbnail text-center">
+                        <img id="smiley_object" src="img/smiley.png" style="width: 100px; height: 100px;" />
+                        <h1>Hi, Happy Birthday {{ $root.fullname }}</h1>
+                        <p>
+                            <a ng-click="greeting.showShouts()" class="btn btn-success btn-md">Click Here For A Surprise!!!</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
