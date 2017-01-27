@@ -2,7 +2,7 @@ angular.module("BirthdayWishes", ["App-Routes", "Controller", "angularMoment", "
 
 .run(['$rootScope', '$state', function($rootScope, $scope, $state){
     $rootScope.fullname = "Ajayi Oluwabimpe"
-    $rootScope.birth_date = new Date("01/27/2017 04:54:00")
+    $rootScope.birth_date = new Date("01/27/2017 20:01:00")
     $rootScope.current_date = new Date()
     $rootScope.tickInterval = 1000
 
