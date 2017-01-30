@@ -1,8 +1,8 @@
 angular.module("BirthdayWishes", ["App-Routes", "Controller", "angularMoment", "ngAnimate", "angular-loading-bar", "countTo"])
 
 .run(['$rootScope', '$state', function($rootScope, $scope, $state){
-    $rootScope.fullname = "Ajayi Oluwabimpe"
-    $rootScope.birth_date = new Date("01/27/2017 20:01:00")
+    $rootScope.fullname = "Victoria(PV) Iwo"
+    $rootScope.birth_date = new Date("01/31/2017 02:15:00")
     $rootScope.current_date = new Date()
     $rootScope.tickInterval = 1000
 

@@ -15,6 +15,11 @@ html, body
     background: transparent !important;
 }
 
+.thumbnail
+{
+    font-weight: bold !important;
+}
+
 #timer_object small
 {
     font-weight: bold;
@@ -54,12 +59,12 @@ img.full_background
 {
     /* Set rules to fill background */
     min-height: 100%;
-    min-width: 1024px;
-	
+    min-width: 100%;
+
     /* Set up proportionate scaling */
     width: 100%;
     height: auto;
-	
+
     /* Set up positioning */
     position: fixed;
     top: 0;
@@ -71,6 +76,13 @@ img.full_background
     img.bg {
         left: 50%;
         margin-left: -512px;   /* 50% */
+    }
+}
+
+@media screen and (max-width: 400px)
+{ /* Specific to this particular image */
+    .message_objects h1 {
+        font-size: 14px !important;
     }
 }
 
@@ -118,7 +130,7 @@ img.full_background
     -o-transition:scaleUp 0.6s both ease-in;
     transition:scaleUp 0.6s both ease-in;
     animation:scaleUp 0.6s both ease-in;
-    
+
 }
 
 .slideRight.ng-hide-remove
@@ -218,7 +230,7 @@ img.full_background
 @keyframes slideOutLeft {
 	to 		{ transform: translateX(-100%); }
 }
-@-moz-keyframes slideOutLeft {	
+@-moz-keyframes slideOutLeft {
 	to 		{ -moz-transform: translateX(-100%); }
 }
 @-webkit-keyframes slideOutLeft {
