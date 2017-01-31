@@ -12,13 +12,13 @@ app.get("*", function(request, response){
     response.sendFile(`${__dirname}/public/app/views/index.html`)
 })
 
-http.listen(2286, function(err){
+http.listen(8080, function(err){
     if(err)
     {
         console.log(err)
     }
     else
     {
-        console.log("Listening on port 2286")
+        console.log("Listening on port 8080")
     }
 })

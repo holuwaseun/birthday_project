@@ -27,6 +27,13 @@ angular.module("App-Routes", ["ui.router"])
                         }
                     }
                 }
+
+                if(parseInt($rootScope.current_date.getDate()) > parseInt($rootScope.birth_date.getDate()) && parseInt($rootScope.current_date.getMonth()) > parseInt($rootScope.birth_date.getMonth()))
+                {
+                    // Redirect to the greetings page
+                    $state.go('greeting', null, {reload: true})
+                }
+
                 $rootScope.title = `Birthday Loading`
                 $rootScope.page_name = `page-waiting`
             }
