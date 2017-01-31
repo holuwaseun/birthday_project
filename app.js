@@ -12,7 +12,7 @@ app.get("*", function(request, response){
     response.sendFile(`${__dirname}/public/app/views/index.html`)
 })
 
-http.listen(8080, function(err){
+http.listen(process.env.PORT, function(err){
     if(err)
     {
         console.log(err)
